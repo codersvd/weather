@@ -1,0 +1,26 @@
+@w: 240px;
+@h: 34px;
+
+.city-select {
+   width: @w;
+   height: @h;
+   overflow: visible;
+   background: url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-32.png) no-repeat right #FFF;
+   border: 1px solid #ccc;
+   select {
+     background: transparent;
+     padding: 5px;
+     font-size: 16px;
+     line-height: 1;
+     border: 0;
+     border-radius: 0;
+     -webkit-appearance: none;
+        -moz-appearance: none;
+             appearance: none;
+     width: 240px;
+     height: 34px;
+   }
+   select::-ms-expand {
+     display: none;
+   }
+}
