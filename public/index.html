@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<title>Yahoo weather</title>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/all.js"></script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="inline weather-display">
+  <div class="city-select">
+     <select id="city">
+        <option value="2122265" selected>Москва</option>
+        <option value="2108210">Воронеж</option>
+        <option value="2123828">Тамбов</option>
+     </select>
+  </div>
+    <div class="weather-table">
+    <img src="" alt="weather" class="weather-img">
+    <ul class="list-weather">
+      <li><span>Температура: </span><span class="weather-temp"></span><span class="temp-celsius"> &deg;C</span></li>
+      <li><span>Дата: </span><span class="weather-date"></span></li>
+      <li><span>Описание: </span><span class="weather-text"></span></li>
+    </ul>
+    </div>
+  </div>
+  <div class="error" style="display: none;">
+      <img src="https://cdn2.iconfinder.com/data/icons/perfect-flat-icons-2/512/Problem_error_problems_alert_vexation_user.png" alt="error" />
+      <div class="message-error">Ошибка сервера</div>
+  </div>
+</div>
+</body>
+</html>
