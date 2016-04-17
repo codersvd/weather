@@ -1,26 +1,237 @@
-@w: 240px;
-@h: 34px;
+/**
+ * Global Reset of all HTML Elements
+ */
 
-.city-select {
-   width: @w;
-   height: @h;
-   overflow: visible;
-   background: url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-32.png) no-repeat right #FFF;
-   border: 1px solid #ccc;
-   select {
-     background: transparent;
-     padding: 5px;
-     font-size: 16px;
-     line-height: 1;
-     border: 0;
-     border-radius: 0;
-     -webkit-appearance: none;
-        -moz-appearance: none;
-             appearance: none;
-     width: 240px;
-     height: 34px;
-   }
-   select::-ms-expand {
-     display: none;
-   }
+html,
+body {
+    border: 0;
+    font-family: "Helvetica-Neue", "Helvetica", Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+div,
+span,
+object,
+iframe,
+img,
+table,
+caption,
+thead,
+tbody,
+tfoot,
+tr,
+tr,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+hgroup,
+menu,
+nav,
+footer,
+header,
+section,
+summary,
+mark,
+audio,
+video {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cit,
+code,
+del,
+dfn,
+em,
+ins,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+b,
+i,
+hr,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+label {
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+}
+
+article,
+aside,
+canvas,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+audio,
+video {
+    display: block;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    caption,
+    th,
+    td {
+        text-align: left;
+        vertical-align: middle;
+    }
+}
+
+a img {
+    border: 0;
+}
+
+:focus {
+    outline: 0;
+}
+
+
+/*====================================================*/
+
+@cell: table-cell;
+@w: 240px;
+@min-w: 200px;
+@h: 34px;
+@bgColor1: #0F8574;
+@bgColor2: lighten(@bgColor1, 20%);
+
+.font-italic() {
+    font-style: italic;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.54);
+}
+
+.gradient (@startColor: #eee, @endColor: white) {
+  background-color: @startColor;
+  background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background: -webkit-linear-gradient(top, @startColor, @endColor);
+  background: -moz-linear-gradient(top, @startColor, @endColor);
+  background: -ms-linear-gradient(top, @startColor, @endColor);
+  background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+.wrapper {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    position: absolute;
+    padding: 50px 60px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    .city-select {
+        max-width: @w;
+        min-width: @min-w;
+        height: @h;
+        overflow: visible;
+        background: url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-32.png) no-repeat right #FFF;
+        border: 1px solid #ccc;
+        select {
+            background: transparent;
+            padding: 5px;
+            font-size: 16px;
+            line-height: 1;
+            border: 0;
+            border-radius: 0;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            max-width: @w;
+            min-width: @min-w;
+            height: @h;
+        }
+        select::-ms-expand {
+            display: none;
+        }
+    }
+    .weather-display {
+        display: none;
+        position: relative;
+
+        .weather-table{
+          display: table;
+          margin: 10px auto;
+        }
+        .list-weather {
+            width: 150px;
+            list-style-type: none;
+            display: @cell;
+            vertical-align: top;
+            li {
+                text-align: left;
+            }
+        }
+        .weather-temp,
+        .temp-celsius {
+            .font-italic();
+        }
+        .weather-date {
+            .font-italic();
+        }
+        .weather-text {
+            .font-italic();
+        }
+        .weather-img {
+            display: @cell;
+            vertical-align: top;
+            padding: 0 10px 0 0;
+        }
+    }
+    .error {
+        width: 100%;
+        img, .message-error {
+            display: @cell;
+            vertical-align: middle;
+        }
+        img {
+          width: 60px;
+        }
+        .message-error{
+          padding: 10px 15px;
+          color: #cf2301;
+          font-size: 20px;
+          font-weight: bold;
+        }
+    }
+}
+
+.inline {
+    display: inline-block;
 }

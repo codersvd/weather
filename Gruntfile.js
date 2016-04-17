@@ -4,13 +4,22 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    connect: {
+      server: {
+        options: {
+          port: 3000,
+          base: 'public',
+          open: true,
+        }
+      }
+    },
     uglify: {
       options: {
         //banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
       },
       src: {
         files: {
-          'public/js/all.js': ['src/js/*.js']
+          'public/js/all.js': ['bower_components/jquery/dist/jquery.min.js', 'src/js/*.js']
         }
       }
     },
@@ -63,13 +72,13 @@ module.exports = function(grunt) {
               //tasks: ['ejs']
       }
     },
-    sprite:{
+    /*sprite:{
       all: {
         src: 'src/img/sprites/*.png',
         dest: 'public/img/spritesheet.png',
         destCss: 'public/css/sprites.css'
       }
-    },
+    },*/
     autoprefixer: {
         options: {
             browsers: ['last 2 versions', 'ie 8', 'ie 9', '> 1%']
@@ -83,6 +92,7 @@ module.exports = function(grunt) {
     },
   });
 
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -92,6 +102,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-spritesmith');
   grunt.loadNpmTasks('grunt-autoprefixer');
 
-  grunt.registerTask('default', ['jshint', 'less', 'sprite', 'autoprefixer', 'uglify', 'autoprefixer', 'watch']);
+  grunt.registerTask('default', ['jshint', 'less', 'sprite', 'autoprefixer', 'uglify', 'autoprefixer', 'connect', 'watch']);
 
 };

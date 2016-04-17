@@ -16,6 +16,7 @@
   "devDependencies": {
     "autoprefix": "^0.1.4",
     "autoprefixer": "^6.3.6",
+    "chai": "^3.5.0",
     "ejs": "^2.4.1",
     "grunt-autoprefixer": "^3.0.4",
     "grunt-cli": "^1.2.0",
@@ -36,9 +37,24 @@
     "grunt-spritesmith": "^6.3.1",
     "grunt-tasks": "^1.0.0",
     "imagemin-mozjpeg": "^5.1.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.8",
+    "karma-mocha": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-requirejs": "^0.2.6",
+    "karma-sinon-chai": "^1.2.0",
     "less-plugin-autoprefix": "^1.5.1",
     "less-plugin-clean-css": "^1.5.1",
-    "less-plugin-group-css-media-queries": "^1.1.1"
+    "less-plugin-group-css-media-queries": "^1.1.1",
+    "lolex": "^1.4.0",
+    "mocha": "^2.4.5",
+    "phantomjs-prebuilt": "^2.1.7",
+    "requirejs": "^2.2.0",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0"
   },
   "dependencies": {
     "grunt": "^0.4.5"
